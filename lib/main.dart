@@ -53,7 +53,9 @@ class _StockCalculatorState extends State<StockCalculator> {
   double _getTotalAmount() {
     final double priceOne = double.tryParse(_priceOne.text) ?? 0.0;
     final double priceTwo = double.tryParse(_priceTwo.text) ?? 0.0;
-    return priceOne + priceTwo;
+    final int qtyOne = int.tryParse(_qtyOne.text) ?? 0;
+    final int qtyTwo = int.tryParse(_qtyTwo.text) ?? 0;
+    return (priceOne * qtyOne) + (priceTwo * qtyTwo);
   }
 
   @override
